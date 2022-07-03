@@ -2,10 +2,10 @@ package main
 
 import (
 	"login/internal/user/database"
-	"login/internal/user/delivery/httpd"
+	"login/internal/user/deliver/httpd"
 )
 
 func main() {
-	httpd.Deliver()
 	database.DbConn()
+	httpd.Deliver()
 }
