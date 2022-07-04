@@ -53,13 +53,12 @@ func SignIn(c echo.Context) error {
 		},
 	}
 
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	t, err := token.SignedString(domain.SigningKey)
-	if err != nil {
-		return err
-	}
+	//token
+	_ = jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	//t, err := token.SignedString(domain.SigningKey)
+	//if err != nil {
+	//	return err
+	//}
 
-	return c.JSON(http.StatusOK, map[string]string{
-		"token": t,
-	})
+	return c.JSON(http.StatusOK, u)
 }

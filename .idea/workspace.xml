@@ -20,14 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="355aebef-8a39-466d-a5de-9bc9d6dea6e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domain/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domain/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/user/auth/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/user/auth/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/user/database/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/user/database/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/user/deliver/httpd/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/user/deliver/httpd/handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +58,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../go-echo-login-todo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -137,10 +130,10 @@
       <screen x="58" y="27" width="1862" height="1053" />
     </state>
     <state x="133" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/58.27.1862.1053@58.27.1862.1053" timestamp="1656910857200" />
-    <state x="301" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1656911048925">
+    <state x="301" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1656912800261">
       <screen x="58" y="27" width="1862" height="1053" />
     </state>
-    <state x="301" y="311" width="424" height="491" key="FileChooserDialogImpl/58.27.1862.1053@58.27.1862.1053" timestamp="1656911048925" />
+    <state x="301" y="311" width="424" height="491" key="FileChooserDialogImpl/58.27.1862.1053@58.27.1862.1053" timestamp="1656912800261" />
     <state width="865" height="340" key="GridCell.Tab.0.bottom" timestamp="1656912662342">
       <screen x="58" y="27" width="1862" height="1053" />
     </state>
@@ -191,7 +184,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/internal/user/auth/auth.go</url>
-          <line>26</line>
+          <line>28</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
