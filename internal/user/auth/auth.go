@@ -1,12 +1,10 @@
 package auth
 
 import (
-	"github.com/golang-jwt/jwt"
 	"github.com/labstack/echo/v4"
 	"login/internal/domain"
 	"login/internal/user/database"
-	"net/http"
-	"time"
+	"login/pkg/jwt"
 )
 
 func SignUp(c echo.Context) error {
@@ -16,14 +14,20 @@ func SignUp(c echo.Context) error {
 	}
 	if user.Username == "" || user.Password == "" {
 		return &echo.HTTPError{
-			Code:    http.StatusBadRequest,
+			Code:    400,
 			Message: "invalid username or password",
 		}
 	}
 	db := database.DbConn()
+	if u := user.Find(db); u.ID != 0{
+		return &echo.HTTPError{
+			Code:    409,
+			Message: "this username isn't available",
+		}
+	}
 	user.CreateUser(db)
 	user.Password = ""
-	return c.JSON(http.StatusCreated, user)
+	return c.JSON(201, user)
 }
 
 func SignIn(c echo.Context) error {
@@ -33,7 +37,7 @@ func SignIn(c echo.Context) error {
 	}
 	if user.Username == "" || user.Password == "" {
 		return &echo.HTTPError{
-			Code: http.StatusBadRequest,
+			Code: 400,
 			Message: "invalid username or password",
 		}
 	}
@@ -41,24 +45,16 @@ func SignIn(c echo.Context) error {
 	u := user.Find(db)
 	if u.ID == 0 || u.Password != user.Password {
 		return &echo.HTTPError{
-			Code: http.StatusUnauthorized,
+			Code: 401,
 			Message: "invalid username or password",
 		}
 	}
-	claims := &domain.JwtCustom{
-		UID:  u.ID,
-		Name: u.Username,
-		StandardClaims: jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(time.Hour * 72).Unix(),
-		},
+	token := jwt.GetToken(u)
+
+	m := &domain.Message{
+		Msg:   "you logged in as, ",
+		UserInfo: u,
+		Token: token,
 	}
-
-	//token
-	_ = jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	//t, err := token.SignedString(domain.SigningKey)
-	//if err != nil {
-	//	return err
-	//}
-
-	return c.JSON(http.StatusOK, u)
+	return c.JSON(200, m)
 }
