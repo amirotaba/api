@@ -10,7 +10,7 @@ func Deliver() {
 
 	e.File("/", "pkg/HTML/index.html")
 
-	//e.POST("/signin", auth.Signin)
+	e.POST("/signin", auth.SignIn)
 
 	e.POST("/signup", auth.SignUp)
 	//e.GET("/user/account/:username", Account)
